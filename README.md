@@ -10,26 +10,26 @@ box
 换而使用命令模式来代替dao层，让dao层的代码全部变成命令，在service层执行一个一个命令来操作数据库数据。例如下面这段代码片段：
 
   
-  @Service
-  public class UserService{
-  @Resource(name = "txRequiredCommandService")
-	private CommandService commandService;
-  public User getUserByUsername(final String username){
-		return commandService.execute(new Command<User>() {
-			private static final long serialVersionUID = 1L;
-			@SuppressWarnings("unchecked")
-			@Override
-			public User execute(Environment environment) throws Exception {
-				SessionFactory sessionFactory = environment.get(SessionFactory.class);
-				Session session = sessionFactory.getCurrentSession();
-				Query query = session.createQuery("from User").setString("username", username).setFirstResult(0).setMaxResults(1);
-				List<User> list = query.list();
-				if(list == null || list.size() == 0){
-					return null;
+	@Service
+	public class UserService{
+		@Resource(name = "txRequiredCommandService")
+		private CommandService commandService;
+		public User getUserByUsername(final String username){
+			return commandService.execute(new Command<User>() {
+				private static final long serialVersionUID = 1L;
+				@SuppressWarnings("unchecked")
+				@Override
+				public User execute(Environment environment) throws Exception {
+					SessionFactory sessionFactory = environment.get(SessionFactory.class);
+					Session session = sessionFactory.getCurrentSession();
+					Query query = session.createQuery("from User").setString("username", username).setFirstResult(0).setMaxResults(1);
+					List<User> list = query.list();
+					if(list == null || list.size() == 0){
+						return null;
+					}
+					return list.get(0);
 				}
-				return list.get(0);
-			}
-		});
+			});
+		}
 	}
-  }
   
