@@ -3,13 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qyf404</groupId>
     <artifactId>box-parent</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <packaging>pom</packaging>
     <modules>
         <module>box-core</module>
         <module>box-common</module>
         <module>box-web</module>
         <module>box-common-web</module>
+        <module>box-spring</module>
     </modules>
 
     <properties>
@@ -175,4 +176,10 @@
         </plugins>
     </build>
 
+    <organization>
+    	<name>qyf404</name>
+    </organization>
+    <issueManagement>
+    	<system>Github</system>
+    </issueManagement>
 </project>
