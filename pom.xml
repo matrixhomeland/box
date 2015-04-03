@@ -182,4 +182,16 @@
     <issueManagement>
     	<system>Github</system>
     </issueManagement>
+    
+    <distributionManagement>
+        <repository>
+            <id>local-releases</id>
+            <url>http://localhost:8081/nexus/content/groups/public/</url>
+        </repository>
+        <snapshotRepository>
+            <id>local-snapshots</id>
+            <url>http://localhost:8081/nexus/content/groups/public_repositories_snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    
 </project>
