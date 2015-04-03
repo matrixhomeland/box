@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.qyf404</groupId>
+    <artifactId>box-parent</artifactId>
+    <version>2.1.0</version>
+  </parent>
+  <artifactId>box-spring</artifactId>
+  <name>box-spring</name>
+  <description>box框架和spring整合的一些公共类。</description>
+  
+  <licenses>
+  	<license>
+  		<name>Apache License 2.0</name>
+  		<url>http://www.spdx.org/licenses/Apache-2.0</url>
+  	</license>
+  </licenses>
+</project>
