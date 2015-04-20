@@ -6,7 +6,8 @@ import com.qyf404.box.common.cmd.SaveOrUpdateCommand;
 import com.qyf404.box.common.cmd.UpdateCommand;
 import com.qyf404.box.core.svc.CommandService;
 
-public  class AbstractPersistentModel implements PersistentModel {
+public abstract class AbstractPersistentModel implements PersistentModel {
+	
 	
 	@Override
 	public void save(CommandService commandService){
@@ -23,6 +24,7 @@ public  class AbstractPersistentModel implements PersistentModel {
 	@Override
 	public void delete(CommandService commandService){
 		commandService.execute(new DeleteCommand<PersistentModel>(this));
+//		commandService.execute(new LogicallyDeleteCommand<AbstractPersistentModel>(this));
 	}
 	
 	

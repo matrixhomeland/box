@@ -13,4 +13,11 @@ public interface Enabled {
 	 */
 	public boolean isEnabled();
 	
+	
+	
+	/**
+	 * 执行删除操作
+	 */
+	public void disable();
+	
 }
