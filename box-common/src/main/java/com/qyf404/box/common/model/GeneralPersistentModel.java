@@ -9,7 +9,7 @@ import com.qyf404.box.core.svc.CommandService;
 
 @MappedSuperclass
 public class GeneralPersistentModel extends AbstractPersistentModel implements Enabled {
-	
+	private static final long serialVersionUID = 1L;
 	@Column(nullable=false)
 	@Expose
 	private boolean enabled = true;
