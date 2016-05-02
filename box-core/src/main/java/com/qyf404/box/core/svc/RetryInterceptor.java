@@ -11,8 +11,6 @@ import com.qyf404.box.core.cmd.Command;
  * 在执行命令抛出异常后，判断异常类型，选择性的重复执行命令，直到抛出其他异常或达到最大执行次数。 retries the command execution
  * in case exceptions.
  * 
- * @author Tom Baeyens
- * @author Huisheng Xu
  */
 public class RetryInterceptor extends Interceptor {
 
@@ -38,6 +36,7 @@ public class RetryInterceptor extends Interceptor {
 			} catch (RuntimeException ex) {
 				e = ex;
 				if (!this.isCausedByOperateFailure(ex)) {
+					log.error("执行发生异常.", e);
 					throw ex;
 				}
 
@@ -56,13 +55,13 @@ public class RetryInterceptor extends Interceptor {
 				sleepTime *= delayFactor;
 			}
 		}
-
-		throw new BoxException("达到最大尝试次数 " + attempt, e);
+		log.error("达到最大尝试次数 " + attempt + "次." + e.getMessage(), e);
+		throw new BoxException("达到最大尝试次数 " + attempt + "次." + e.getMessage(), e);
 		// throw new RobotException("gave up after " + attempt + " attempts");
 	}
 
 	/**
-	 * fix for JBPM-2864. If this exception is caused by StaleStateException,
+	 * If this exception is caused by StaleStateException,
 	 * then we should retry.
 	 */
 	protected boolean isCausedByOperateFailure(Throwable throwable) {

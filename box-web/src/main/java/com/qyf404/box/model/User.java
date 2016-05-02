@@ -136,6 +136,12 @@ public class User extends AbstractPersistentModel implements UserDetails,Enabled
 	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
 	}
+
+	@Override
+	public void disable() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 

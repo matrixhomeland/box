@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.qyf404</groupId>
     <artifactId>box-parent</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.1</version>
     <packaging>pom</packaging>
     <modules>
         <module>box-core</module>
