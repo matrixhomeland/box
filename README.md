@@ -2,7 +2,7 @@ box
 ===
 
 [![Build Status](https://travis-ci.org/qyf404/box.svg?branch=master)](https://travis-ci.org/qyf404/box)
-
+[![codecov](https://codecov.io/gh/qyf404/box/branch/master/graph/badge.svg)](https://codecov.io/gh/qyf404/box)
 
 * 这个项目主要是实现一套通用的java服务器端的框架。方便快速搭建一个可用的并且可以快速开发的基础代码。
 * 项目计划将spring、hibernate、springMVC整合起来。
